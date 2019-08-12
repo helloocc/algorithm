@@ -15,15 +15,14 @@ class Solution:
     def reverseList1(self, head: ListNode) -> ListNode:
         """
         非递归：
-        从头结点开始反转，头结点的next变成None，最后一次while循环反转尾结点，之后current变成current.next为None，所以返回pre结点。
+        从头结点开始反转，头结点的next变成None，最后一次while循环反转尾结点，之后head变成head.next为None，所以返回pre结点。
         """
         pre = None
-        current = head
-        while current:
-            tmp = current.next
-            current.next = pre
-            pre = current
-            current = tmp
+        while head:
+            tmp = head.next
+            head.next = pre
+            pre = head
+            head = tmp
         return pre
 
     def reverseList(self, head: ListNode) -> ListNode:
@@ -34,10 +33,10 @@ class Solution:
         if (not head) or (not head.next):
             return head
 
-        current = self.reverseList(head.next)
+        new_head = self.reverseList(head.next)
         head.next.next = head
         head.next = None
-        return current
+        return new_head
 
 
 def print_node(head: ListNode):
