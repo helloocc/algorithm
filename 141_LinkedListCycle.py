@@ -32,10 +32,8 @@ class Solution(object):
         假设快慢指针一定可以相遇，那么有S+2t−t=nR，即S+t=nR，如果对于任意的S，R，n，总可以找到一个t满足上式，那么就可以说明快慢指针一定可以相遇(显然可以找到)
         而实际上，由于S<R，所以在慢指针走过一圈之前就可以相遇。
         """
-        if not head or not head.next:
-            return False
-        slow, fast = head, head
-        while slow and fast:
+        slow = fast = head
+        while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
             if slow == fast:
