@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding=utf8 -*-
+import pytest
 
 
 class ListNode:
@@ -8,6 +9,9 @@ class ListNode:
         self.next = None
 
     def __str__(self):
+        return str(self.val)
+
+    def __repr__(self):
         return str(self.val)
 
 
@@ -44,12 +48,24 @@ def print_node(head: ListNode):
     while head:
         _str += str(head)
         head = head.next
-    print(_str)
+    return _str
 
 
-if __name__ == "__main__":
+def test_reverse():
+    s = Solution()
     a, b, c, d = ListNode(1), ListNode(2), ListNode(3), ListNode(4)
     a.next, b.next, c.next = b, c, d
-    print_node(a)
+    assert print_node(s.reverseList(a)) == '4321'
+
+    e = ListNode(6)
+    assert print_node(s.reverseList(e)) == '6'
+
+
+def test_reverse1():
     s = Solution()
-    print_node(s.reverseList(a))
+    a, b, c, d = ListNode(1), ListNode(2), ListNode(3), ListNode(4)
+    a.next, b.next, c.next = b, c, d
+    assert print_node(s.reverseList1(a)) == '4321'
+
+    e = ListNode(6)
+    assert print_node(s.reverseList(e)) == '6'

@@ -51,6 +51,6 @@ class Solution:
                                             ('dwwefw', 3),
                                             ('tmmzuxt', 5),
                                             ('bbb', 1)])
-def test_solve(param, ret):
+def test1(param, ret):
     solution = Solution()
     assert solution.lengthOfLongestSubstring(param) == ret

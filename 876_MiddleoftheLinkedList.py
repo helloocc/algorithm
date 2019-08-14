@@ -28,12 +28,12 @@ def print_node(head: ListNode):
     while head:
         _str += str(head)
         head = head.next
-    print(_str)
+    return _str
 
 
-if __name__ == "__main__":
+def test1():
+    s = Solution()
+
     a, b, c, d = ListNode(1), ListNode(2), ListNode(3), ListNode(4)
     a.next, b.next, c.next = b, c, d
-    print_node(a)
-    s = Solution()
-    print_node(s.middleNode(a))
+    assert print_node(s.middleNode(a)) == '34'

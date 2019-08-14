@@ -47,18 +47,32 @@ def print_node(head: ListNode):
     while head:
         _str += str(head)
         head = head.next
-    print(_str)
+    return _str
 
 
-if __name__ == "__main__":
+def test1():
+    s = Solution()
+
     a, b, c = ListNode(1), ListNode(2), ListNode(4)
     a.next, b.next, = b, c
     d, e, f = ListNode(1), ListNode(3), ListNode(4)
     d.next, e.next, = e, f
-    s = Solution()
-    print_node(s.mergeTwoLists(a, d))
+    assert print_node(s.mergeTwoLists1(a, d)) == '112344'
 
     a = ListNode(1)
     d = ListNode(2)
+    assert print_node(s.mergeTwoLists1(a, d)) == '12'
+
+
+def test2():
     s = Solution()
-    print_node(s.mergeTwoLists(a, d))
+
+    a, b, c = ListNode(1), ListNode(2), ListNode(4)
+    a.next, b.next, = b, c
+    d, e, f = ListNode(1), ListNode(3), ListNode(4)
+    d.next, e.next, = e, f
+    assert print_node(s.mergeTwoLists(a, d)) == '112344'
+
+    a = ListNode(1)
+    d = ListNode(2)
+    assert print_node(s.mergeTwoLists(a, d)) == '12'

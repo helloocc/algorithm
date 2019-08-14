@@ -41,8 +41,8 @@ class Solution(object):
         return False
 
 
-if __name__ == "__main__":
+def test1():
+    s = Solution()
     a, b, c, d = ListNode(3), ListNode(2), ListNode(0), ListNode(-1)
     a.next, b.next, c.next, d.next = b, c, d, b
-    s = Solution()
-    print(s.hasCycle(a))
+    assert s.hasCycle(a)

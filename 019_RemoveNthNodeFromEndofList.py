@@ -10,6 +10,9 @@ class ListNode:
     def __str__(self):
         return str(self.val)
 
+    def __repr__(self):
+        return str(self.val)
+
 
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
@@ -35,19 +38,25 @@ def print_node(head: ListNode):
     while head:
         _str += str(head)
         head = head.next
-    print(_str)
+    return _str
 
 
-if __name__ == "__main__":
+def test1():
+    s = Solution()
     a, b, c, d, e = ListNode(1), ListNode(
         2), ListNode(3), ListNode(4), ListNode(5)
     a.next, b.next, c.next, d.next = b, c, d, e
-    s = Solution()
-    print_node(s.removeNthFromEnd(a, 1))
+    assert print_node(s.removeNthFromEnd(a, 1)) == '1234'
 
+
+def test2():
+    s = Solution()
     t1, t2 = ListNode(1), ListNode(2)
     t1.next = t2
-    print_node(s.removeNthFromEnd(t1, 2))
+    assert print_node(s.removeNthFromEnd(t1, 2)) == '2'
 
+
+def test3():
+    s = Solution()
     t3 = ListNode(1)
-    print_node(s.removeNthFromEnd(t3, 1))
+    assert print_node(s.removeNthFromEnd(t3, 1)) == ''
