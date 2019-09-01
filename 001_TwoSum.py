@@ -32,5 +32,7 @@ class Solution:
                                                      ([1, 2, 3], 4, [0, 2])])
 def test1(nums, target, ret):
     solution = Solution()
-    assert solution.twoSum(nums, target) == ret
-    assert solution.twoSum1(nums, target) == ret
+    a = list(nums)
+    assert solution.twoSum(a, target) == ret
+    b = list(nums)
+    assert solution.twoSum1(b, target) == ret

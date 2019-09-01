@@ -49,7 +49,6 @@ def test1():
 
     f.next, g.next, h.next = g, h, c
     assert s.getIntersectionNode(a, f).val == 8
-    assert s.getIntersectionNode1(a, f).val == 8
 
 
 def test2():
@@ -60,7 +59,6 @@ def test2():
 
     f = ListNode(3)
     f.next = d
-    assert s.getIntersectionNode(a, f).val == 2
     assert s.getIntersectionNode1(a, f).val == 2
 
 
@@ -71,5 +69,4 @@ def test3():
 
     f, g = ListNode(1), ListNode(5)
     f.next = g
-    assert s.getIntersectionNode(a, f) == None
     assert s.getIntersectionNode1(a, f) == None

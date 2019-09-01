@@ -16,7 +16,7 @@ class Solution:
             return new_int
         return 0
 
-    def reverse(self, x: int) -> int:
+    def reverse1(self, x: int) -> int:
         """
         第一步：求符号
         第二步：step为-1切片，并求绝对值

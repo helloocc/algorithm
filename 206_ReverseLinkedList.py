@@ -68,4 +68,4 @@ def test_reverse1():
     assert print_node(s.reverseList1(a)) == '4321'
 
     e = ListNode(6)
-    assert print_node(s.reverseList(e)) == '6'
+    assert print_node(s.reverseList1(e)) == '6'
