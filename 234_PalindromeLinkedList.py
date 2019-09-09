@@ -10,6 +10,10 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
+        """
+        利用栈“先进后出，后进先出”的特点，判断前半段和后半段是否相等。
+        注意：需要判断奇偶两种场景，如果是奇数场景，中间数字需要从栈中先弹出，再开始判断。
+        """
         if not head or not head.next:
             return True
         stack = []
