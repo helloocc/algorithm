@@ -7,7 +7,7 @@ import pytest
 
 class Solution:
     """
-    内置itertools.permutations(nums)函数
+    另一种方法：内置itertools.permutations(nums)函数
     """
 
     def permute(self, nums: list) -> list:
@@ -32,3 +32,5 @@ class Solution:
                                                         [3, 2, 1]])
                                            ])
 def test1(nums, res):
+    s = Solution()
+    assert s.permute(nums) == res
