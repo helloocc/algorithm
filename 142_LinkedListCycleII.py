@@ -47,7 +47,7 @@ class Solution:
             return
 
 
-def detectCycle2(self, head: ListNode) -> ListNode:
+    def detectCycle2(self, head: ListNode) -> ListNode:
         """
         了解 while...else 用法:
         else只有在while判断为false时执行，如果break或exception时不执行
