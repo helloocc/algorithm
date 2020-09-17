@@ -7,7 +7,7 @@ import pytest
 
 class Solution:
 
-    def trailingZeroes(self, n: int) -> int:
+    def trailingZeroes1(self, n: int) -> int:
         """
         https://leetcode.com/problems/factorial-trailing-zeroes/discuss/196311/topic
 
@@ -19,10 +19,21 @@ class Solution:
             return 0
         if (n < 10):
             return 1
-        return n/5 + self.trailingZeroes(n/5)
+        return n // 5 + self.trailingZeroes1(n // 5)
+
+    def trailingZeroes2(self, n: int) -> int:
+        res = 0
+        while n > 0:
+            n //= 5
+            res += n
+        return res
+
 
 @pytest.mark.parametrize(("param", "ret"), [(3, 0),
-                                            (5, 1)])
+                                            (5, 1),
+                                            (10, 2),
+                                            (30, 7)])
 def test1(param, ret):
     solution = Solution()
-    assert solution.trailingZeroes(param) == ret
+    assert solution.trailingZeroes1(param) is ret
+    assert solution.trailingZeroes2(param) is ret
