@@ -45,16 +45,12 @@ class Solution:
         return res % (10**9 + 7)
 
 
-s = Solution()
-print(s.sumSubarrayMins([71, 55, 82, 55]))
-
-
-@ pytest.mark.parametrize(('param', 'ret'), [([3, 1, 2, 4], 17),
-                                             ([71, 55, 82, 55], 593),
-                                             ([1, 2, 3], 10),
-                                             ([1, 2], 4),
-                                             ([1], 1),
-                                             ([], 0)])
+@pytest.mark.parametrize(('param', 'ret'), [([3, 1, 2, 4], 17),
+                                            ([71, 55, 82, 55], 593),
+                                            ([1, 2, 3], 10),
+                                            ([1, 2], 4),
+                                            ([1], 1),
+                                            ([], 0)])
 def test1(param, ret):
     solution = Solution()
     assert solution.sumSubarrayMins(param) == ret
